@@ -8866,7 +8866,8 @@ int Client::chownat(int dirfd, const char *relpath, uid_t new_uid, gid_t new_gid
   attr.st_gid = new_gid;
   return _setattr(in, &attr, CEPH_SETATTR_UID|CEPH_SETATTR_GID, perms);
 }
-
+/*
+// Temporarily commented out due to unused function warning
 static void attr_set_atime_and_mtime(struct stat *attr,
                                      const utime_t &atime,
                                      const utime_t &mtime)
@@ -8876,7 +8877,7 @@ static void attr_set_atime_and_mtime(struct stat *attr,
   stat_set_mtime_sec(attr, mtime.tv.tv_sec);
   stat_set_mtime_nsec(attr, mtime.tv.tv_nsec);
 }
-
+*/
 // for [l]utime() invoke the timeval variant as the timespec
 // variant are not yet implemented. for futime[s](), invoke
 // the timespec variant.
